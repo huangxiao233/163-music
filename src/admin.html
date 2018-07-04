@@ -13,107 +13,98 @@
         display: flex;
         width: 200px;
         flex-direction: column;
-        border-radius: 10px;
+        border-radius: 40px;
         text-align: center;
         cursor: pointer;
     }
-    *{
+
+    * {
         list-style: none;
     }
-    *{
+
+    * {
         box-sizing: border-box;
     }
-    *{
-        margin:0;
-        padding:0
+
+    * {
+        margin: 0;
+        padding: 0
     }
-  #page{
-      display: flex;
-      height:100vh;
-  }
-  #page > aside{
-       width:200px;
-       border:1px red solid;
-       display: flex;
-       flex-direction: column;
-  }
-  #page > #newSong{
-    border:1px green solid;
-    padding:20px;
-  }
-  /* aside */
-  #page  .songList li.active{
-      background-color: grey;
-      /* padding:10px; */
-  }
-  #page  #songList-container{
-      text-align: left;
-      flex-grow:1;
-      /* 让其触底 */
-  }
-  #page  .songList > li{
-      border-bottom: 1px black solid;
-      padding:20px;
-  }
-  .form{
-      padding:20px;
-  }
-  .form .row{
-      padding:10px;
-  }
 
+    #page {
+        display: flex;
+        height: 100vh;
+    }
 
+    #page>aside {
+        width: 200px;
+        border: 1px red solid;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #page>main {
+        border: 1px green solid;
+        padding: 20px;
+    }
+
+    /* aside */
+
+    #page .songList li.active {
+        background-color: grey;
+        /* padding:10px; */
+    }
+
+    #page #songList-container {
+        text-align: left;
+        flex-grow: 1;
+        /* 让其触底 */
+    }
+
+    #page .songList>li {
+        border-bottom: 1px black solid;
+        padding: 20px;
+    }
+
+    .form {
+        padding: 20px;
+    }
+
+    .form .row {
+        padding: 10px;
+    }
 </style>
 
 <body>
-  <div id="page">
-    <aside>
-        <div class="newSong">
-            新建歌曲
-        </div>
-        <div id="songList-container">
-            <ul class="songList">
-                <li style="border-top:1px solid red">歌曲1</li>
-                <li class="active">歌曲1</li>
-                <li>歌曲1</li>
-                <li>歌曲1</li>
-                <li>歌曲1</li>
-            </ul>
-        </div>
-        <div id="draggable">
-            <button id="clickable">upload</button>
-            <p>文件大小不可以超过 40MB</p>
-            <P>点击或者拖拽文件</P>
-        </div>
-    </aside>
-    <div id="newSong">
-        <span style="font-weight:bolder">新建歌曲</span>
-        <form class="form">
-            <div class="row">
-                <label>歌名</label>
-                <input type="text">
-            </div>
-            <div class="row">
-                <label>歌手</label>
-                <input type="text">
-            </div>
-            <div class="row">
-                <label>外链</label>
-                <input type="text">
-                
-            </div>
-            <button type="submit">
-                    保存
-            </button>
-        </form>
-    </div>
-</div>
+    <div id="page">
 
-   
+        <aside>
+            <div class="newSong">
+            </div>
+            <div id="songList-container">
+            </div>
+            <div id="draggable">
+                <button id="clickable">upload</button>
+                <p>文件大小不可以超过 40MB</p>
+                <P>点击或者拖拽文件</P>
+            </div>
+    
+        </aside>
+        <main>
+        </main>
+
+    </div>
+
+
     <script src="../node_modules/qiniu-js/dist/qiniu.min.js"></script>
     <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
     <script src="../vendors/moxie.js"></script>
     <script src="../node_modules/plupload/js/plupload.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../song-list.js"></script>
+    <script src="../songForm.js"></script>
+    <script src="../js/newSong.js"></script>
+    <!-- <script src="../js/upload.js"></script> -->
     <script>
         var APP_ID = '6mqnK4fFgzmjdGft6lMkIX68-gzGzoHsz';
         var APP_KEY = 'EVS5rbE835jvf34aXaLRyUGj';
