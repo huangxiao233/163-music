@@ -32,6 +32,7 @@
             selectSongId:undefined,
         },
         find(){
+            //query.find() is a promise,so return
             var query = new AV.Query('Song');
             return query.find().then((songs)=>{
                 this.data.songs = songs.map((song)=>{
